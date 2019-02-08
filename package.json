@@ -1,7 +1,7 @@
 {
   "name": "manhattan",
   "version": "1.0.0",
-  "description": "",
+  "description": "Front end application with using React + Redux with Typescript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,8 +13,8 @@
     "url": "git+https://github.com/klasik01/manhattan.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Stanislav Kasika",
+  "license": "UNDEFINED",
   "bugs": {
     "url": "https://github.com/klasik01/manhattan/issues"
   },
