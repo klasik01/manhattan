@@ -13,7 +13,7 @@ const store = createStore(reducers, applyMiddleware(thunk));
 ReactDom.render (
     <Provider store={store}>
         <BrowserRouter>
-            <App color="Blue" />
+            <App />
         </BrowserRouter>    
     </Provider>
     ,
