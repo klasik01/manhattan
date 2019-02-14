@@ -1,45 +1,30 @@
 {
   "name": "manhattan",
-  "version": "1.0.0",
-  "description": "Front end application with using React + Redux with Typescript",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/klasik01/manhattan.git"
-  },
-  "keywords": [],
-  "author": "Stanislav Kasika",
-  "license": "UNDEFINED",
-  "bugs": {
-    "url": "https://github.com/klasik01/manhattan/issues"
-  },
-  "homepage": "https://github.com/klasik01/manhattan#readme",
-  "devDependencies": {
-    "awesome-typescript-loader": "^5.2.1",
-    "html-webpack-plugin": "^3.2.0",
-    "typescript": "^3.3.3",
-    "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.1.14"
-  },
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@types/react": "^16.8.2",
-    "@types/react-dom": "^16.8.0",
-    "axios": "^0.18.0",
-    "lodash": "^4.17.11",
+    "@types/jest": "24.0.4",
+    "@types/node": "11.9.3",
+    "@types/react": "16.8.3",
+    "@types/react-dom": "16.8.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "react-redux": "^6.0.0",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.1",
-    "redux-form": "^8.1.0",
-    "redux-thunk": "^2.3.0",
-    "styled-components": "^4.1.3"
-  }
+    "react-scripts": "2.1.5",
+    "typescript": "3.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
