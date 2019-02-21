@@ -1,0 +1,12 @@
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+    body {
+<<<<<<< HEAD
+        margin: 15px;
+=======
+>>>>>>> 7b0775b53a371e0a871580b330a45c9b13fc69b4
+    }
+`;
+
+export default GlobalStyle;

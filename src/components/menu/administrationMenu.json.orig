@@ -1,0 +1,31 @@
+[
+  {
+<<<<<<< HEAD
+    "url": "/administration",
+=======
+    "url": "/administration/page1",
+>>>>>>> 7b0775b53a371e0a871580b330a45c9b13fc69b4
+    "name": "Page 1",
+    "subItems": []
+  },
+  {
+    "url": "/administration/page2",
+<<<<<<< HEAD
+    "name": "Color settings",
+=======
+    "name": "Page 2",
+>>>>>>> 7b0775b53a371e0a871580b330a45c9b13fc69b4
+    "subItems": [
+      {
+        "url": "/administration/page3",
+        "name": "Sub Page 3",
+        "subItems": []
+      }
+    ]
+  },
+  {
+    "url": "/tutorial/page1",
+    "name": "Tutorial 1",
+    "subItems": []
+  }
+]

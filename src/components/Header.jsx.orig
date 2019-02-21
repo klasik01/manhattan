@@ -1,0 +1,13 @@
+import React from 'react';
+import styled from 'styled-components';
+
+<<<<<<< HEAD
+const Header = () => (
+    <div>
+        Header...
+    </div>
+);
+
+export default Header;
+=======
+>>>>>>> 7b0775b53a371e0a871580b330a45c9b13fc69b4

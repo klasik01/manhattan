@@ -1,0 +1,36 @@
+import React from 'react';
+<<<<<<< HEAD
+import {connect} from 'react-redux';
+import {setCurrentLocale} from '../reducers/intlReducer';
+
+const SwitchLocale = ({locales, setCurrentLocale}) => (
+    <div className="dropdown">
+        <button className="btn btn-primary dropdown-toggle" type="button" data-toogle="dropdown">Language<span
+            className="caret"></span></button>
+        <ul className="dropdown-menu">
+            {locales.map((locale, key) => <li><a className="dropdown-item"
+                                                 onClick={() => setCurrentLocale(locale)}>{locale}</a></li>)}
+        </ul>
+    </div>
+=======
+import { connect } from 'react-redux';
+import { setCurrentLocale } from '../reducers/intlReducer';
+
+const SwitchLocale = ({locales, setCurrentLocale}) => (
+  <li className="nav-item dropdown" id="basic-nav-dropdown">
+      <a className="nav-link dropdown-toggle" data-toogle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+      <div className="dropdown-menu">
+          {locales.map((locale, key) => <a className="dropdown-item" onClick={() => setCurrentLocale(locale)}>{locale}</a>)}
+      </div>
+  </li>
+>>>>>>> 7b0775b53a371e0a871580b330a45c9b13fc69b4
+);
+
+export default connect(state => ({
+    currentLocale: state.intl.currentLocale,
+    locales: state.intl.locales,
+<<<<<<< HEAD
+}), {setCurrentLocale})(SwitchLocale)
+=======
+}), { setCurrentLocale})(SwitchLocale)
+>>>>>>> 7b0775b53a371e0a871580b330a45c9b13fc69b4
