@@ -1,6 +1,6 @@
 import labels from '../messages/labels.json';
 
-const locales = ['en', 'sk', 'cs', 'de', 'fr'];
+const locales = ['en', 'sk', 'cs'];
 
 // Define user's language. Different browsers have the user locale defined
 // on different fields on the `navigator` object, so we make sure to account

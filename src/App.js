@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import Welcome from "./components/Welcome";
 import NotFoundPage from "./components/NotFoundPage";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Main = styled.div`
   padding: 15px 20px;

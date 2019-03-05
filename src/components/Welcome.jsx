@@ -1,11 +1,14 @@
 import React from 'react';
+import SwitchLocale from "../intl/SwitchLocale";
+import {FormattedMessage} from "react-intl";
 
 class Welcome extends React.Component {
 
     render() {
         return (
             <div>
-                Welcome....
+                <FormattedMessage id="welcome" defaultMessage="Default message"/>
+                <SwitchLocale/>
             </div>
         );
     }

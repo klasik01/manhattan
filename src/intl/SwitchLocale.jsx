@@ -1,19 +1,41 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { setCurrentLocale } from '../reducers/intlReducer';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {setCurrentLocale} from '../reducers/intlReducer';
+import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from "reactstrap";
 
-const SwitchLocale = ({ locales, setCurrentLocale }) => (
-    <div className="dropdown">
-        <button className="btn btn-primary dropdown-toggle" type="button" data-toogle="dropdown">Language<span
-            className="caret"></span></button>
-        <ul className="dropdown-menu">
-            {locales.map((locale, key) => <li><a className="dropdown-item"
-                                                 onClick={() => setCurrentLocale(locale)}>{locale}</a></li>)}
-        </ul>
-    </div>
-);
+class SwitchLocale extends Component {
+    constructor(props) {
+        super(props);
 
-export default connect(state => ({
+        this.state = {
+            dropdownOpen: false
+        };
+    }
+
+    toggle = () => {
+        this.setState(prevState => ({
+            dropdownOpen: !prevState.dropdownOpen
+        }));
+    }
+
+    render() {
+        const {locales, setCurrentLocale} = this.props;
+        return (
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                <DropdownToggle caret>Language</DropdownToggle>
+                <DropdownMenu>
+                    {locales.map((locale, key) => <DropdownItem key={key}
+                        onClick={() => setCurrentLocale(locale)}>{locale}</DropdownItem>)}
+                </DropdownMenu>
+            </Dropdown>
+        );
+    }
+}
+
+const mapStateToProps = state => ({
     currentLocale: state.intl.currentLocale,
-    locales: state.intl.locales,
-}), {setCurrentLocale})(SwitchLocale)
+    locales: state.intl.locales
+})
+
+
+export default connect(mapStateToProps, {setCurrentLocale})(SwitchLocale)
