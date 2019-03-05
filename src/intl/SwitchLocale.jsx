@@ -1,8 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {setCurrentLocale} from '../reducers/intlReducer';
+import { connect } from 'react-redux';
+import { setCurrentLocale } from '../reducers/intlReducer';
 
-const SwitchLocale = ({locales, setCurrentLocale}) => (
+const SwitchLocale = ({ locales, setCurrentLocale }) => (
     <div className="dropdown">
         <button className="btn btn-primary dropdown-toggle" type="button" data-toogle="dropdown">Language<span
             className="caret"></span></button>
