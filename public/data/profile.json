@@ -1,0 +1,14 @@
+{
+  "username": "skasika",
+  "firstName": "Standa",
+  "lastName": "Klasik",
+  "email": "stanislav.kasika@gmail.com",
+  "country": "cz",
+  "language": "cs",
+  "role": [
+    {
+      "name": "admin",
+      "label": "admin"
+    }
+  ]
+}

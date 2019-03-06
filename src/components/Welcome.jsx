@@ -7,7 +7,7 @@ class Welcome extends React.Component {
     render() {
         return (
             <div>
-                <FormattedMessage id="welcome" defaultMessage="Default message"/>
+                <FormattedMessage id="welcome" defaultMessage="Welcome"/>
                 <SwitchLocale/>
             </div>
         );
