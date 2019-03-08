@@ -1,11 +1,41 @@
 {
     "cs": {
-      "welcome": "Vítejte"
+      "welcome": "Vítejte",
+      "projectName": "Projekt Manhattan",
+      "missingPage": "Stránka nebyla nalezena...",
+      "en": "Angličtina",
+      "cs": "Čeština",
+      "sk": "Slovenština",
+      "profile": "Profil",
+      "aboutMe": "O Mě",
+      "signOut": "Odhlásit se",
+      "settings": "Nastavení",
+      "language": "Výběr jazyka"
     },
     "en": {
-      "welcome": "Welcome"
+      "welcome": "Welcome",
+      "projectName": "Project Manhattan",
+      "missingPage": "Not found page...",
+      "en": "English",
+      "cs": "Czech",
+      "sk": "Slovakia",
+      "profile": "Profile",
+      "aboutMe": "About Me",
+      "signOut": "Sign out",
+      "settings": "Settings",
+      "language": "Switch Language"
     },
     "sk": {
-      "welcome": "Víťajte"
+      "welcome": "Vítajte",
+      "projectName": "Projekt Manhattan",
+      "missingPage": "Stránka nebola nájdená",
+      "en": "Angličtina",
+      "cs": "Čeština",
+      "sk": "Slovenština",
+      "profile": "Profil",
+      "aboutMe": "O Mňa",
+      "signOut": "Odhlásiť sa",
+      "settings": "Nastavení",
+      "language": "Výber jazyka"
     }
   }

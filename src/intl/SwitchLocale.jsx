@@ -1,33 +1,23 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {setCurrentLocale} from '../reducers/intlReducer';
-import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from "reactstrap";
+import {DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown} from "reactstrap";
+import { FormattedMessage } from 'react-intl';
 
 class SwitchLocale extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            dropdownOpen: false
-        };
-    }
-
-    toggle = () => {
-        this.setState(prevState => ({
-            dropdownOpen: !prevState.dropdownOpen
-        }));
-    }
 
     render() {
         const {locales, setCurrentLocale} = this.props;
         return (
-            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                <DropdownToggle caret>Language</DropdownToggle>
-                <DropdownMenu>
+            <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret >
+                <FormattedMessage id="language" defaultMessage="Language" />
+                </DropdownToggle>
+                <DropdownMenu right>
                     {locales.map((locale, key) => <DropdownItem key={key}
-                        onClick={() => setCurrentLocale(locale)}>{locale}</DropdownItem>)}
+                        onClick={() => setCurrentLocale(locale)}><FormattedMessage id={locale} defaultMessage={locale} /></DropdownItem>)}
                 </DropdownMenu>
-            </Dropdown>
+            </UncontrolledDropdown>
         );
     }
 }

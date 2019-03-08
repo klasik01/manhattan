@@ -1,0 +1,38 @@
+[
+    {
+    
+        "id": 1,
+        "name": "About me",
+        "hasSubItem": false,
+        "url": "/about",
+        "last": false,
+        "label": "aboutMe"
+    },
+    {
+        "id": 0,
+        "name": "profile",
+        "hasSubItem": true,
+        "last": true,
+        "label": "profile",
+        "subItems": [
+            {
+                "name": "Settings",
+                "url": "/settings",
+                "component": "Setting",
+                "label": "settings"
+            },
+            {
+                "name": "Profile",
+                "url": "/profile",
+                "component": "Profile",
+                "label": "profile"
+            },
+            {
+                "name": "Sign out",
+                "url": "/signout",
+                "component": "SignOut",
+                "label": "signOut"
+            }
+        ]
+    }
+]

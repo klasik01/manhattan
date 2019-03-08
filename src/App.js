@@ -7,9 +7,9 @@ import styled from "styled-components";
 import Login from "./components/Login";
 import Welcome from "./components/Welcome";
 import NotFoundPage from "./components/NotFoundPage";
+import MainMenu from "./components/menu/MainMenu";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavbarMenu from "./components/menu/NavbarMenu";
 import {Spinner} from "reactstrap";
 
 const Main = styled.div`
@@ -49,7 +49,7 @@ class App extends Component {
         return (
             <AppWrapper>
                 <GlobalStyle/>
-                <NavbarMenu/>
+                <MainMenu/>
                 <Main>
                     <Switch>
                         <Route exact path="/" component={Welcome}/>

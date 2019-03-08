@@ -1,8 +1,9 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 const NotFoundPage = () => (
     <div>
-        NotFoundPage...
+        <FormattedMessage id="missingPage" defaultMessage="Page not found" />
     </div>
 );
 
