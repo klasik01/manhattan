@@ -14,18 +14,21 @@
         "label": "profile",
         "subItems": [
             {
+                "id": "0a",
                 "name": "Settings",
                 "url": "/settings",
                 "component": "Setting",
                 "label": "settings"
             },
             {
+                "id": "0b",
                 "name": "Profile",
                 "url": "/profile",
                 "component": "Profile",
                 "label": "profile"
             },
             {
+                "id": "0c",
                 "name": "Sign out",
                 "url": "/signout",
                 "component": "SignOut",

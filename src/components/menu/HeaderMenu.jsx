@@ -56,18 +56,18 @@ class HeaderMenu extends Component {
     }
 
     renderNavItemMenu = (item) => (
-        <NavItem>
+        <NavItem key={item.id}>
             <MenuLink href={item.url}><FormattedMessage id={item.label} /></MenuLink>
         </NavItem>
     );
 
     renderDropDownMenu = (item) => (
-        <UncontrolledDropdown nav inNavbar>
+        <UncontrolledDropdown nav inNavbar key={item.id}>
             <DropDownLink nav caret >
                 <FormattedMessage id={item.label} />
             </DropDownLink>
             <DropdownMenu right>
-                {item.subItems.map(subItem => <DropdownItem href={subItem.url}><FormattedMessage id={subItem.label} /></DropdownItem>)}
+                {item.subItems.map(subItem => <DropdownItem key={subItem.component} href={subItem.url}><FormattedMessage id={subItem.label} /></DropdownItem>)}
             </DropdownMenu>
         </UncontrolledDropdown>
     );
