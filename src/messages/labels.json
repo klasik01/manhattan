@@ -10,7 +10,18 @@
       "aboutMe": "O Mě",
       "signOut": "Odhlásit se",
       "settings": "Nastavení",
-      "language": "Výběr jazyka"
+      "language": "Výběr jazyka",
+      "footer-copyright": "Vytvořil Stanislav Kasika © 2019",
+      "login.header": "Přihlásit se",
+      "login.register": "Nemáte ještě účet? Zaregistrujte se zde.",
+      "login.pernament.login": "Zůstat trvale přihlášen",
+      "register.header": "Registrace",
+      "register.button.register": "Zaregistrovat se",
+      "register.email": "Email",
+      "register.password": "Heslo",
+      "register.password.again": "Heslo znovu",
+      "register.licence.plate": "Souhlasím s licenčními podmínkami",
+      "register.redirectLogin": "Máte již účet? Přihlašte se zde"
     },
     "en": {
       "welcome": "Welcome",
@@ -23,19 +34,17 @@
       "aboutMe": "About Me",
       "signOut": "Sign out",
       "settings": "Settings",
-      "language": "Switch Language"
-    },
-    "sk": {
-      "welcome": "Vítajte",
-      "projectName": "Projekt Manhattan",
-      "missingPage": "Stránka nebola nájdená",
-      "en": "Angličtina",
-      "cs": "Čeština",
-      "sk": "Slovenština",
-      "profile": "Profil",
-      "aboutMe": "O Mňa",
-      "signOut": "Odhlásiť sa",
-      "settings": "Nastavení",
-      "language": "Výber jazyka"
+      "language": "Switch Language",
+      "footer-copyright": "Created by Stanislav Kasika © 2019",
+      "login.header": "Sign In",
+      "login.register": "Do not have an account yet? Sign up here.",
+      "login.pernament.login": "Stay signed in permanently",
+      "register.header": "Sign Up",
+      "register.button.register": "Sign Up",
+      "register.email": "Email",
+      "register.password": "Password",
+      "register.password.again": "Password again",
+      "register.licence.plate": "I agree with the license terms",
+      "register.redirectLogin": "Do you already have an account? Sign in here"
     }
   }
