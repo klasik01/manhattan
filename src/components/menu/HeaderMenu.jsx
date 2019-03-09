@@ -35,42 +35,70 @@ class HeaderMenu extends Component {
     render() {
         const { items } = this.props;
 
-        const MenuWrapper = styled(Navbar)`
-            background: #eeeeee;
-        `;
-
         return (
-                <MenuWrapper expand="md">
-                    <NavbarBrand href="/"><FormattedMessage id="projectName" defaultMessage="Project Manhattan"/></NavbarBrand>
+                <MenuWrapper expand="md" dark>
+                    <MenuBrand href="/"><FormattedMessage id="projectName" defaultMessage="Project Manhattan"/></MenuBrand>
                     <NavbarToggler onClick={this.toggle}/>
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
+                        <MenuNav className="ml-auto" navbar>
                         <SwitchLocale/>
                         {items.map((item) => {
                             if(item.hasSubItem) {
-                                return(
-                                <UncontrolledDropdown nav inNavbar>
-                                    <DropdownToggle nav caret >
-                                    <FormattedMessage id={item.label} />
-                                    </DropdownToggle>
-                                    <DropdownMenu right>
-                                        {item.subItems.map(subItem => <DropdownItem href={subItem.url}><FormattedMessage id={subItem.label} /></DropdownItem>)}
-                                    </DropdownMenu>
-                                </UncontrolledDropdown>)
+                                return(this.renderDropDownMenu(item));
                             } else {
-                                return (
-                                    <NavItem>
-                                        <NavLink href={item.url}><FormattedMessage id={item.label} /></NavLink>
-                                    </NavItem>
-                                );
+                                return (this.renderNavItemMenu(item));
                             }
                         })}
-                        </Nav>
+                        </MenuNav>
                     </Collapse>
                 </MenuWrapper>
         );
     }
+
+    renderNavItemMenu = (item) => (
+        <NavItem>
+            <MenuLink href={item.url}><FormattedMessage id={item.label} /></MenuLink>
+        </NavItem>
+    );
+
+    renderDropDownMenu = (item) => (
+        <UncontrolledDropdown nav inNavbar>
+            <DropDownLink nav caret >
+                <FormattedMessage id={item.label} />
+            </DropDownLink>
+            <DropdownMenu right>
+                {item.subItems.map(subItem => <DropdownItem href={subItem.url}><FormattedMessage id={subItem.label} /></DropdownItem>)}
+            </DropdownMenu>
+        </UncontrolledDropdown>
+    );
 }
+
+const MenuWrapper = styled(Navbar)`
+    background: rgb(52,195,161);
+`;
+
+const MenuBrand = styled(NavbarBrand)`
+    color: white;
+    text-transform: uppercase;
+    :hover {
+        color: #ffffff;
+    }
+`;
+
+const MenuNav = styled(Nav)`
+
+`;
+
+const MenuLink = styled(NavLink)`
+    color: white;
+    :hover {
+        
+    }
+`;
+
+export const DropDownLink = styled(DropdownToggle)`
+    color: white;
+`;
 
 HeaderMenu.propTypes = {
     light: PropTypes.bool,

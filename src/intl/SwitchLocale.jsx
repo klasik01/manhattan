@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {setCurrentLocale} from '../reducers/intlReducer';
-import {DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown} from "reactstrap";
+import {DropdownItem, DropdownMenu, UncontrolledDropdown} from "reactstrap";
 import { FormattedMessage } from 'react-intl';
+import { DropDownLink } from '../components/menu/HeaderMenu';
 
 class SwitchLocale extends Component {
 
@@ -10,9 +11,9 @@ class SwitchLocale extends Component {
         const {locales, setCurrentLocale} = this.props;
         return (
             <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret >
+                <DropDownLink nav caret >
                 <FormattedMessage id="language" defaultMessage="Language" />
-                </DropdownToggle>
+                </DropDownLink>
                 <DropdownMenu right>
                     {locales.map((locale, key) => <DropdownItem key={key}
                         onClick={() => setCurrentLocale(locale)}><FormattedMessage id={locale} defaultMessage={locale} /></DropdownItem>)}
