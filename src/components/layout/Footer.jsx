@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { FaFacebookF, FaTwitter, FaSnapchatGhost,  } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaSnapchatGhost, } from 'react-icons/fa';
 import { IoLogoInstagram } from 'react-icons/io';
 import { FormattedMessage } from 'react-intl';
 
 class Footer extends Component {
 
-
-
     render() {
-
         const FooterWrapper = styled.div`
             padding:40px 0;
-            color:#4b4c4d;
         `;
 
         const SocialWrapper = styled.div`
@@ -48,15 +44,13 @@ class Footer extends Component {
 
         return (
             <FooterWrapper>
-                    <hr />
-                    <SocialWrapper>
-                        <a href="/"><FaFacebookF /></a>
-                        <a href="/"><FaSnapchatGhost /></a>
-                        <a href="/"><FaTwitter /></a>
-                        <a href="/"><IoLogoInstagram /></a>
-                        <a href="/">X</a>
-                    </SocialWrapper>
-                    <CopyrightWrapper><FormattedMessage id="footer-copyright" /></CopyrightWrapper>
+                <SocialWrapper>
+                    <a href="/"><FaFacebookF /></a>
+                    <a href="/"><FaSnapchatGhost /></a>
+                    <a href="/"><FaTwitter /></a>
+                    <a href="/"><IoLogoInstagram /></a>
+                </SocialWrapper>
+                <CopyrightWrapper><FormattedMessage id="footer-copyright" /></CopyrightWrapper>
             </FooterWrapper>
         );
     }

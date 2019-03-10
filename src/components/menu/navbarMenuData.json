@@ -8,6 +8,14 @@
         "label": "aboutMe"
     },
     {
+    
+        "id": 2,
+        "name": "Blog",
+        "hasSubItem": false,
+        "url": "/blog",
+        "label": "blog"
+    },
+    {
         "id": 0,
         "name": "profile",
         "hasSubItem": true,

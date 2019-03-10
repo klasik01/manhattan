@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     Collapse,
     DropdownItem,
@@ -10,10 +10,13 @@ import {
     NavbarToggler,
     UncontrolledDropdown,
     NavItem,
-    NavLink
+    NavLink,
+    Container
 } from "reactstrap";
+
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-import {FormattedMessage} from "react-intl";
+import { FormattedMessage } from "react-intl";
 import SwitchLocale from '../../intl/SwitchLocale';
 import styled from "styled-components";
 
@@ -36,28 +39,30 @@ class HeaderMenu extends Component {
         const { items } = this.props;
 
         return (
-                <MenuWrapper expand="md" dark>
-                    <MenuBrand href="/"><FormattedMessage id="projectName" defaultMessage="Project Manhattan"/></MenuBrand>
-                    <NavbarToggler onClick={this.toggle}/>
+            <MenuWrapper expand="md" dark>
+                <Container>
+                    <MenuBrand href="/"><FormattedMessage id="projectName" defaultMessage="Project Manhattan" /></MenuBrand>
+                    <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <MenuNav className="ml-auto" navbar>
-                        <SwitchLocale/>
-                        {items.map((item) => {
-                            if(item.hasSubItem) {
-                                return(this.renderDropDownMenu(item));
-                            } else {
-                                return (this.renderNavItemMenu(item));
-                            }
-                        })}
+                            <SwitchLocale />
+                            {items.map((item) => {
+                                if (item.hasSubItem) {
+                                    return (this.renderDropDownMenu(item));
+                                } else {
+                                    return (this.renderNavItemMenu(item));
+                                }
+                            })}
                         </MenuNav>
                     </Collapse>
-                </MenuWrapper>
+                </Container>
+            </MenuWrapper>
         );
     }
 
     renderNavItemMenu = (item) => (
         <NavItem key={item.id}>
-            <MenuLink href={item.url}><FormattedMessage id={item.label} /></MenuLink>
+            <MenuLink tag={Link} to={item.url}><FormattedMessage id={item.label} /></MenuLink>
         </NavItem>
     );
 
@@ -67,14 +72,15 @@ class HeaderMenu extends Component {
                 <FormattedMessage id={item.label} />
             </DropDownLink>
             <DropdownMenu right>
-                {item.subItems.map(subItem => <DropdownItem key={subItem.component} href={subItem.url}><FormattedMessage id={subItem.label} /></DropdownItem>)}
+                {item.subItems.map(subItem => <DropdownItem tag={Link} key={subItem.component} to={subItem.url}><FormattedMessage id={subItem.label} /></DropdownItem>)}
             </DropdownMenu>
         </UncontrolledDropdown>
     );
 }
 
 const MenuWrapper = styled(Navbar)`
-    background: rgb(52,195,161);
+    background: #ed7679;
+    height: 50px;
 `;
 
 const MenuBrand = styled(NavbarBrand)`
@@ -92,7 +98,7 @@ const MenuNav = styled(Nav)`
 const MenuLink = styled(NavLink)`
     color: white;
     :hover {
-        
+        color: red;
     }
 `;
 

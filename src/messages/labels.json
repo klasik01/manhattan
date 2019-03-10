@@ -21,7 +21,12 @@
       "register.password": "Heslo",
       "register.password.again": "Heslo znovu",
       "register.licence.plate": "Souhlasím s licenčními podmínkami",
-      "register.redirectLogin": "Máte již účet? Přihlašte se zde"
+      "register.redirectLogin": "Máte již účet? Přihlašte se zde",
+      "blog": "Blog",
+      "blog.menu.main": "Blog Main page",
+      "blog.menu.second": "Second Item",
+      "blog.menu.second.first": "SubItem 1",
+      "blog.menu.second.second": "SubItem 2"
     },
     "en": {
       "welcome": "Welcome",
@@ -45,6 +50,11 @@
       "register.password": "Password",
       "register.password.again": "Password again",
       "register.licence.plate": "I agree with the license terms",
-      "register.redirectLogin": "Do you already have an account? Sign in here"
+      "register.redirectLogin": "Do you already have an account? Sign in here",
+      "blog": "Blog",
+      "blog.menu.main": "Blog Main page",
+      "blog.menu.second": "Second Item",
+      "blog.menu.second.first": "SubItem 1",
+      "blog.menu.second.second": "SubItem 2"
     }
   }

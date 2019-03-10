@@ -8,11 +8,13 @@ import Login from "./components/Login";
 import Welcome from "./components/Welcome";
 import NotFoundPage from "./components/NotFoundPage";
 import MainMenu from "./components/menu/MainMenu";
+import { Container } from 'reactstrap';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Spinner } from "reactstrap";
-import Footer from './components/Footer';
+import Footer from './components/layout/Footer';
+import Blog from './components/blog/Blog';
 
 const Main = styled.div`
   padding: 15px 20px;
@@ -60,6 +62,7 @@ class App extends Component {
                 <Main>
                     <Switch>
                         <Route exact path="/" component={Welcome} />
+                        <Route path="/blog" component={Blog} />
                         <Route component={NotFoundPage} />
                     </Switch>
                 </Main>
