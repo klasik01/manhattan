@@ -1,58 +1,84 @@
 import React, {Component} from 'react';
 import {Breadcrumb, BreadcrumbItem} from 'reactstrap';
 import {IoIosCloseCircle} from "react-icons/io";
-import menu from "./blogMenu";
+import menu from "../blog/blogMenu";
 import SideBarItems from "./SideBarItems";
 import styled from "styled-components";
 import {Route} from "react-router-dom";
+import PropTypes from 'prop-types';
 
 class SideBar extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            defaultSelected: '/blog',
-            selected: '',
+            selected: '/blog/',
+        }
+    }
+
+    componentDidMount() {
+        console.log(this.state.selected);
+        console.log(this.props.defaulSelected);
+        if (this.state.selected === '') {
+            console.log(this.state.selected);
+            this.setState({selected: this.props.defaultSelected})
         }
     }
 
     render() {
 
-        const {open, onClose, defaultSelected} = this.props;
+        const {open, onClose, width} = this.props;
+
+        const {selected} = this.state;
 
         return (
-            <Route>
-            <React.Fragment>
-                <SideNav id="mySidenav" open={open} >
-                    <SideNavBrand>
-                        <SideNavBrandHeader>Blog Menu</SideNavBrandHeader>
-                        <SideNavBrandClose onClick={onClose}><IoIosCloseCircle style={{fontSize: '33px'}}/></SideNavBrandClose>
-                    </SideNavBrand>
-                    <div className="clearfix"></div>
+            <Route render={({location, history}) => (
+                <React.Fragment>
+                    {console.log(location)}
+                    {console.log(history)}
+                    <SideNav id="mySidenav" open={open} width={width}
+                             onSelect={(selected) => {
+                                 const to = '/' + selected;
+                                 if (location.pathname !== to) {
+                                     history.push(to);
+                                 }
+                             }} >
+                        <SideNavBrand>
+                            <SideNavBrandHeader>Blog Menu</SideNavBrandHeader>
+                            <SideNavBrandClose onClick={onClose}><IoIosCloseCircle
+                                style={{fontSize: '33px'}}/></SideNavBrandClose>
+                        </SideNavBrand>
+                        <div className="clearfix"></div>
 
-                    <SideNavToggle>
-                        <SideNavItemList className="list-group">
-                            {menu.map(item => {
-                                return <SideBarItems item={item} key={item.id}/>
-                            })}
-                        </SideNavItemList>
-                    </SideNavToggle>
-                </SideNav>
+                        <SideNavToggle>
+                            <SideNavItemList className="list-group">
+                                {menu.map(item => {
+                                    return <SideBarItems item={item} key={item.id} selected={selected}/>
+                                })}
+                            </SideNavItemList>
+                        </SideNavToggle>
+                    </SideNav>
 
 
-                <PageMain id="main" open={open}>
-                    <Breadcrumb>
-                        <BreadcrumbItem>Hello</BreadcrumbItem>
-                        <BreadcrumbItem>Hello</BreadcrumbItem>
-                    </Breadcrumb>
-                    {this.props.children}
-                </PageMain>
-            </React.Fragment>
-    </Route>
+                    <PageMain id="main" open={open}>
+                        <Breadcrumb>
+                            <BreadcrumbItem>Hello</BreadcrumbItem>
+                            <BreadcrumbItem>Hello</BreadcrumbItem>
+                        </Breadcrumb>
+                        {this.props.children}
+                    </PageMain>
+                </React.Fragment>
+            )} />
         );
     }
 }
 
+SideBar.propTypes = {
+    open: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired,
+    defaulSelected: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired,
+};
 
 
 const SideNavBrand = styled.div`
@@ -106,7 +132,7 @@ const SideNavItem = styled.div`
 
 const SideNav = styled.div`
     height: 100%;
-    width: ${props => props.open ? '250px' : '0'};
+    width: ${props => props.open ? '200px' : '0'};
     position: relative;
     z-index: 1;
     float: left;
@@ -118,7 +144,7 @@ const SideNav = styled.div`
 const PageMain = styled.div`
     transition: margin-left .5s;
     padding: 16px;
-    margin-left: ${props => props.open ? '250px' : '0'};
+    margin-left: ${props => props.open ? '200px': '0'};
 `;
 
 export default SideBar;

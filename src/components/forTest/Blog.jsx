@@ -1,3 +1,4 @@
+/*
 import React, { Component } from 'react';
 import { Route, Switch, withRouter, Link } from "react-router-dom";
 
@@ -33,4 +34,4 @@ class Blog extends Component {
     }
 }
 
-export default Blog;
+export default Blog;*/

@@ -3,7 +3,7 @@
         "id": "0",
         "name": "Main Blog Page",
         "label": "blog.menu.main",
-        "url": "blog/",
+        "url": "/blog/",
         "icon": "FaHome",
         "subItems": []
     },
@@ -11,14 +11,14 @@
         "id": "1",
         "name": "Second Blog Page",
         "label": "blog.menu.second",
-        "url": "blog/second",
+        "url": "/blog/second",
         "icon": "FaPencilRuler",
         "subItems": [
             {
                 "id": "1a",
                 "name": "Submenu 1",
                 "label": "blog.menu.second.first",
-                "url": "blog/second/first",
+                "url": "/blog/second/first",
                 "icon": "",
                 "subItems": []
             },
@@ -26,7 +26,7 @@
                 "id": "1b",
                 "name": "Submenu 2",
                 "label": "blog.menu.second.second",
-                "url": "blog/second/second",
+                "url": "/blog/second/second",
                 "icon": "",
                 "subItems": []
             }

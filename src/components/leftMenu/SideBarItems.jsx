@@ -13,7 +13,7 @@ class SideBarItems extends Component {
         }
     }
 
-    renderSubMenu = (item) => {
+    renderSubMenu = (item, selected) => {
         const {open} = this.state;
 
         return (
@@ -29,8 +29,10 @@ class SideBarItems extends Component {
                     <SideNavSubItems id={item.id}>
                         <ul>
                             {item.subItems.map(subItem => {
+                                {console.log(selected + " - " + subItem.url)}
                                 return (
-                                    <SideNavSubItem key={subItem.id} className={``}>
+
+                                    <SideNavSubItem key={subItem.id} active={subItem.url === selected ? true : false}>
                                         <Link to={subItem.url}>
                                             <FormattedMessage
                                                 id={subItem.label}/>
@@ -45,9 +47,11 @@ class SideBarItems extends Component {
         );
     }
 
-    renderOneLink = (item) => {
+    renderOneLink = (item, selected) => {
+        console.log(selected + " - " + item.url);
         return (
-            <SideNavItem>
+
+            <SideNavItem active={item.url === selected ? true : false}>
                 <Link to={item.url}>
                     <FormattedMessage
                         id={item.label}/>
@@ -57,11 +61,11 @@ class SideBarItems extends Component {
     }
 
     render() {
-        const {item, onSelected} = this.props;
+        const {item, selected} = this.props;
         if (item.subItems.length > 0) {
-            return this.renderSubMenu(item);
+            return this.renderSubMenu(item, selected);
         } else {
-            return this.renderOneLink(item);
+            return this.renderOneLink(item, selected);
         }
     }
 
@@ -75,10 +79,10 @@ const SideNavItem = styled.li`
         cursor: pointer;
     }
     
-    && .active {
+    ${props => props.active && `
         font-weight: bold;
         color: orange;
-    }
+    `}
     
 `;
 
@@ -92,10 +96,11 @@ const SideNavSubItem = styled.li`
         color: orange;
     }
     
-    && .active {
+     ${props => props.active && `
+
         font-weight: bold;
         color: orange;
-    }
+    `}
 `;
 
 const SideNavSubItems = styled.div`
